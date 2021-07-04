@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+*,
+::after,
+::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --ff-primary:"Kumbh Sans", sans-serif;
+
+    --fs-body: 11px;
+    --fs-h1: 18px;
+    --fs-h2: 16px;
+    --fs-h3: 20px;
+
+    --fw-reg: 400;
+    --fw-bold: 700;
+
+    --clr-cyan: hsl(185, 75%, 39%);
+    --clr-desat_blue: hsl(229, 23%, 23%);
+    --clr-gray_blue: hsl(227, 10%, 46%);
+    --clr-gray: hsl(0, 0%, 59%);
+}
+
+
+/* General Styles */
+
+
+body{
+    background-color: var(--clr-cyan);
+    background-image: url(./images/bg-pattern-bottom.svg), url(./images/bg-pattern-top.svg);
+    background-position: 200% -50%, -100% 150%;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 75% , 75%;
+    height: 100vh;
+    color:var(--clr-desat_blue);
+}
+
+
+/* Typography */
+
+h1,
+h2,
+h3,
+p{
+    font-family: var(--ff-primary);    
+}
+
+h1{
+   font-size: var(--fs-h1);
+   font-weight: var(--fw-bold);
+   padding-bottom: 2px;
+}
+
+h2{
+    font-size: var(--fs-h2);
+    font-weight:var(--fw-reg);
+}
+
+p{
+    font-size: var(--fs-body);
+    letter-spacing: 0.5px;
+    font-weight: var(--fw-reg);
+    color:var(--clr-gray_blue);
+}
+
+/* Card */
+
+.card{
+    display: grid;
+    background-color: white ;
+    text-align: center;
+    width: 350px;
+    grid-template-areas: 
+    "background" 
+    "photo" 
+    "info" ;
+    gap: 10px;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.card__info{
+    grid-area: info;
+}
+.card__background{
+    grid-area: background;
+    border-radius: 20px 20px 0px 0px;
+}
+
+/* profile photo */
+
+.card__profile-photo{
+    grid-area: photo;
+    border-radius: 50%;
+    border: 5px solid white;
+    justify-self: center;
+    margin-top: -4em;
+    margin-bottom: 1em;
+    align-self:baseline;
+}
+
+
+/* about */
+
+.card__info__about{
+    display: grid;
+    grid-template-areas: 
+    "name age"
+    "location location";
+    grid-area: about;
+    column-gap: 12px;
+    row-gap: 12px;
+    margin-bottom: 2em;
+}
+
+.card__info__about .name{
+    grid-area: name;
+    justify-self: right;
+}
+
+.card__info__about .age{
+    grid-area: age;
+    justify-self: left;
+    font-weight: var(--fw-reg);
+    color:var(--clr-gray)
+}
+
+.card__info__about h2{
+    grid-area: location;
+    justify-self: center;
+    font-weight: var(--fw-reg);
+    color:var(--clr-gray)
+}
+
+/* stats */
+
+.card__info__stats{
+    display: grid;
+    grid-template-areas:
+    "followers likes photos";
+    column-gap: 10px;
+    justify-content:space-evenly;
+    border-top: 1px solid hsla(0, 0%, 59%, 50%);
+    padding: 1.75em 0em;
+}
+
+.card_info_stat{
+}
+
+.card__info__stats__followers{
+    grid-area: followers;
+}
+
+.card__info__stats__likes{
+    grid-area: likes;
+}
+
+.card__info__stats__photos{
+    grid-area: photos;
+}
+
+
+
+
+
+
